@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2cfd21fe-242b-4112-8230-ae0d81bd3dbf" name="Default Changelist" comment="" />
+    <list default="true" id="2cfd21fe-242b-4112-8230-ae0d81bd3dbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +80,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -114,12 +120,17 @@
       <workItem from="1585515520655" duration="412000" />
       <workItem from="1585987423581" duration="3231000" />
       <workItem from="1586000891592" duration="947000" />
-      <workItem from="1586004711052" duration="105000" />
+      <workItem from="1586004711052" duration="223000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="76" key="#Assign_Data_Sources" timestamp="1585468284522">
@@ -210,10 +221,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1585467694708" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1586004815819">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1586004935343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586004815819" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586004935343" />
     <state x="1008" y="227" width="322" height="379" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585503921676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
