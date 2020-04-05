@@ -15,17 +15,17 @@ public class LocalDateParserImpl implements LocalDateParser {
 //                    DateTimeFormatter.ofPattern("dd/MM/yyyy HH/mm/ss"));
 
     @Override
-    public LocalDate parseLocalDateFromString(String date) {
+    public LocalDate parseLocalDateFromString(String date, String pattern) {
 
         return LocalDate.parse(date,
-                DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                DateTimeFormatter.ofPattern(pattern));
     }
 
     @Override
-    public LocalDateTime parseLocalDateTimeFromString(String dateTime) {
+    public LocalDateTime parseLocalDateTimeFromString(String dateTime, String pattern) {
 
         return LocalDateTime.parse(dateTime,
-                DateTimeFormatter.ofPattern("dd/MM/yyyy HH/mm/ss"));
+                DateTimeFormatter.ofPattern(pattern));
     }
 
 

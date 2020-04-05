@@ -15,7 +15,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     Optional<Car> findById(Long id);
 
-    @Query("SELECT c FROM Car AS c ORDER BY c.pictures.size DESC, c.make")
+    @Query("SELECT c FROM Car AS c ORDER BY SIZE(c.pictures) DESC, c.make")
     List<Car> findAllByMake();
 
 }

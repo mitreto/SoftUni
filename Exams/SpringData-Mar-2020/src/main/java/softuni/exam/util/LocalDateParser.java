@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public interface LocalDateParser {
 
-    LocalDate parseLocalDateFromString(String date);
+    LocalDate parseLocalDateFromString(String date, String pattern);
 
-    LocalDateTime parseLocalDateTimeFromString(String dateTime);
+    LocalDateTime parseLocalDateTimeFromString(String dateTime, String pattern);
 }

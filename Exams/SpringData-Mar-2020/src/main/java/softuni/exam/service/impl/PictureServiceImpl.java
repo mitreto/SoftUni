@@ -11,6 +11,7 @@ import softuni.exam.models.entities.Picture;
 import softuni.exam.repository.PictureRepository;
 import softuni.exam.service.CarService;
 import softuni.exam.service.PictureService;
+import softuni.exam.util.LocalDateParser;
 import softuni.exam.util.ValidationUtil;
 
 import java.io.FileReader;
@@ -33,14 +34,16 @@ public class PictureServiceImpl implements PictureService {
     private final ValidationUtil validationUtil;
     private final Gson gson;
     private final CarService carService;
+    private final LocalDateParser localDateParser;
 
     @Autowired
-    public PictureServiceImpl(PictureRepository pictureRepository, ModelMapper modelMapper, ValidationUtil validationUtil, Gson gson, CarService carService) {
+    public PictureServiceImpl(PictureRepository pictureRepository, ModelMapper modelMapper, ValidationUtil validationUtil, Gson gson, CarService carService, LocalDateParser localDateParser) {
         this.pictureRepository = pictureRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
         this.gson = gson;
         this.carService = carService;
+        this.localDateParser = localDateParser;
     }
 
 
@@ -71,8 +74,12 @@ public class PictureServiceImpl implements PictureService {
                             Picture picture = this.modelMapper.map(pictureSeedDto, Picture.class);
 
                             LocalDateTime localDateTime =
-                                    LocalDateTime.parse(pictureSeedDto.getDateAndTime(),
-                                            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                                    this.localDateParser.parseLocalDateTimeFromString(
+                                            pictureSeedDto.getDateAndTime(), "yyyy-MM-dd HH:mm:ss");
+
+//                            LocalDateTime localDateTime =
+//                                    LocalDateTime.parse(pictureSeedDto.getDateAndTime(),
+//                                            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
                             picture.setDateAndTime(localDateTime);
 

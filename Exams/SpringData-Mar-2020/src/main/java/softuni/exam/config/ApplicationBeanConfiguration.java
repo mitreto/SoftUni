@@ -5,8 +5,10 @@ import com.google.gson.GsonBuilder;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import softuni.exam.util.LocalDateParser;
 import softuni.exam.util.ValidationUtil;
 import softuni.exam.util.XmlParser;
+import softuni.exam.util.impl.LocalDateParserImpl;
 import softuni.exam.util.impl.ValidationUtilImpl;
 import softuni.exam.util.impl.XmlParserImpl;
 
@@ -35,6 +37,11 @@ public class ApplicationBeanConfiguration {
     @Bean
     public XmlParser xmlParser(){
         return new XmlParserImpl();
+    }
+
+    @Bean
+    public LocalDateParser localDateParser(){
+        return new LocalDateParserImpl();
     }
 
 }

@@ -8,6 +8,7 @@ import softuni.exam.models.dtos.CarSeedDto;
 import softuni.exam.models.entities.Car;
 import softuni.exam.repository.CarRepository;
 import softuni.exam.service.CarService;
+import softuni.exam.util.LocalDateParser;
 import softuni.exam.util.ValidationUtil;
 
 import java.io.FileReader;
@@ -28,13 +29,15 @@ public class CarServiceImpl implements CarService {
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
     private final Gson gson;
+    private final LocalDateParser localDateParser;
 
     @Autowired
-    public CarServiceImpl(CarRepository carRepository, ModelMapper modelMapper, ValidationUtil validationUtil, Gson gson) {
+    public CarServiceImpl(CarRepository carRepository, ModelMapper modelMapper, ValidationUtil validationUtil, Gson gson, LocalDateParser localDateParser) {
         this.carRepository = carRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
         this.gson = gson;
+        this.localDateParser = localDateParser;
     }
 
     @Override
@@ -68,8 +71,11 @@ public class CarServiceImpl implements CarService {
                             Car car = this.modelMapper.map(carSeedDto, Car.class);
 
                             LocalDate date =
-                                    LocalDate.parse(carSeedDto.getRegisteredOn(),
-                                            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                                    localDateParser.parseLocalDateFromString(carSeedDto.getRegisteredOn(), "dd/MM/yyyy");
+
+//                            LocalDate localDate =
+//                                    LocalDate.parse(carSeedDto.getRegisteredOn(),
+//                                            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
                             car.setRegisteredOn(date);
 
