@@ -3,14 +3,14 @@ package robotService.models.procedures;
 import robotService.models.procedures.interfaces.Procedure;
 import robotService.models.robots.interfaces.Robot;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 import static robotService.common.ExceptionMessages.INSUFFICIENT_PROCEDURE_TIME;
 
 public abstract class BaseProcedure implements Procedure {
 
-    protected Set<Robot> robots;
+    protected Collection<Robot> robots;
 
     protected BaseProcedure() {
         this.robots = new LinkedHashSet<>();
